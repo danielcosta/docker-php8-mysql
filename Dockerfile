@@ -2,7 +2,6 @@ FROM daccbr/php8-composer-xdebug as extensions
 
 RUN apk add --no-cache --update --virtual .phpize-deps $PHPIZE_DEPS
 
-#RUN apk add --no-cache --update postgresql-dev &&\
 RUN docker-php-ext-install pdo_mysql
 
 FROM daccbr/php8-composer-xdebug AS final
